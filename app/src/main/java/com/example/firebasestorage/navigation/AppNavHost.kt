@@ -9,13 +9,14 @@ import androidx.navigation.compose.rememberNavController
 import com.example.firebasestorage.ui.theme.screens.home.HomeScreen
 import com.example.firebasestorage.ui.theme.screens.login.LoginScreen
 import com.example.firebasestorage.ui.theme.screens.signup.SignupScreen
+import com.example.firebasestorage.ui.theme.screens.splash.SplashScreen
 import com.example.firebasestorage.ui.theme.screens.upload.UploadScreen
 
 @Composable
 fun AppNavHost(modifier: Modifier = Modifier, navController:NavHostController = rememberNavController(), startDestination:String = ROUT_LOGIN) {
     NavHost(navController = navController, modifier=modifier, startDestination = startDestination){
-        composable(ROUT_HOME){
-            HomeScreen(navController)
+        composable(ROUT_SPLASH){
+            SplashScreen(navController)
         }
 
         composable(ROUT_LOGIN){
@@ -28,6 +29,10 @@ fun AppNavHost(modifier: Modifier = Modifier, navController:NavHostController = 
 
         composable(ROUT_UPLOAD){
             UploadScreen(navController)
+        }
+
+        composable(ROUT_HOME){
+            HomeScreen(navController)
         }
     }
 }
